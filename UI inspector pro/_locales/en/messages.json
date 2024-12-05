@@ -1,0 +1,383 @@
+{
+  "EXT_NAME": {
+    "message": "UI Inspector - Live Style Editor"
+  },
+  "EXT_NAME_SHORT": {
+    "message": "UI Inspector"
+  },
+  "EXT_DESCRIPTION": {
+    "message": "Inspect and visually edit elements directly on the page for faster design and UI debugging."
+  },
+  "EMPTY_MESSAGE": {
+    "message": "Select an element"
+  },
+  "NO_CHANGES_MESSAGE": {
+    "message": "No changes found"
+  },
+  "COMMON_ELEMENTS_TOGGLE_LABEL": {
+    "message": "Apply changes to similar elements"
+  },
+  "SECTION_TITLE_ADVANCED": {
+    "message": "Advanced"
+  },
+  "FORM_TITLE_PRESET": {
+    "message": "Preset"
+  },
+  "CHOOSE_PRESET": {
+    "message": "Choose Preset"
+  },
+  "SAVE_PRESET": {
+    "message": "Save Preset"
+  },
+  "SECTION_TITLE_APPEARANCE": {
+    "message": "Appearance"
+  },
+  "FORM_TITLE_OPACITY": {
+    "message": "Opacity"
+  },
+  "FORM_TITLE_ROTATION": {
+    "message": "Rotation"
+  },
+  "FORM_TITLE_BORDER_RADIUS": {
+    "message": "Border Radius"
+  },
+  "FORM_TITLE_BLEND_MODE": {
+    "message": "Blend Mode"
+  },
+  "OPTION_BLEND_NORMAL": {
+    "message": "Normal"
+  },
+  "OPTION_BLEND_MULTIPLY": {
+    "message": "Multiply"
+  },
+  "OPTION_BLEND_SCREEN": {
+    "message": "Screen"
+  },
+  "OPTION_BLEND_OVERLAY": {
+    "message": "Overlay"
+  },
+  "OPTION_BLEND_DARKEN": {
+    "message": "Darken"
+  },
+  "OPTION_BLEND_LIGHTEN": {
+    "message": "Lighten"
+  },
+  "OPTION_BLEND_COLOR_DODGE": {
+    "message": "Color Dodge"
+  },
+  "OPTION_BLEND_COLOR_BURN": {
+    "message": "Color Burn"
+  },
+  "OPTION_BLEND_HARD_LIGHT": {
+    "message": "Hard Light"
+  },
+  "OPTION_BLEND_SOFT_LIGHT": {
+    "message": "Soft Light"
+  },
+  "OPTION_BLEND_DIFFERENCE": {
+    "message": "Difference"
+  },
+  "OPTION_BLEND_EXCLUSION": {
+    "message": "Exclusion"
+  },
+  "OPTION_BLEND_HUE": {
+    "message": "Hue"
+  },
+  "OPTION_BLEND_SATURATION": {
+    "message": "Saturation"
+  },
+  "OPTION_BLEND_COLOR": {
+    "message": "Color"
+  },
+  "OPTION_BLEND_LUMINOSITY": {
+    "message": "Luminosity"
+  },
+  "OPTION_BLEND_PLUS_DARKER": {
+    "message": "Plus Darker"
+  },
+  "OPTION_BLEND_PLUS_LIGHTER": {
+    "message": "Plus Lighter"
+  },
+  "SECTION_TITLE_TYPOGRAPHY": {
+    "message": "Typography"
+  },
+  "FORM_TITLE_TYPEFACE": {
+    "message": "Typeface"
+  },
+  "FORM_TITLE_WEIGHT": {
+    "message": "Weight"
+  },
+  "OPTION_WEIGHT_THIN": {
+    "message": "Thin"
+  },
+  "OPTION_WEIGHT_EXTRA_LIGHT": {
+    "message": "Extra Light"
+  },
+  "OPTION_WEIGHT_LIGHT": {
+    "message": "Light"
+  },
+  "OPTION_WEIGHT_REGULAR": {
+    "message": "Regular"
+  },
+  "OPTION_WEIGHT_MEDIUM": {
+    "message": "Medium"
+  },
+  "OPTION_WEIGHT_SEMI_BOLD": {
+    "message": "Semi Bold"
+  },
+  "OPTION_WEIGHT_BOLD": {
+    "message": "Bold"
+  },
+  "OPTION_WEIGHT_EXTRA_BOLD": {
+    "message": "Extra Bold"
+  },
+  "OPTION_WEIGHT_BLACK": {
+    "message": "Black"
+  },
+  "FORM_TITLE_FONT_SIZE": {
+    "message": "Font Size"
+  },
+  "FORM_TITLE_LINE_HEIGHT": {
+    "message": "Line Height"
+  },
+  "FORM_TITLE_LETTER_SPACING": {
+    "message": "Letter Spacing"
+  },
+  "FORM_TITLE_ALIGNMENT": {
+    "message": "Alignment"
+  },
+  "FORM_TITLE_COLOR": {
+    "message": "Color"
+  },
+  "SECTION_TITLE_BACKGROUND": {
+    "message": "Background"
+  },
+  "FORM_TITLE_BACKGROUND_BLUR": {
+    "message": "Background Blur"
+  },
+  "SECTION_TITLE_SPACING": {
+    "message": "Spacing"
+  },
+  "FORM_TITLE_MARGIN": {
+    "message": "Margin"
+  },
+  "FORM_TITLE_PADDING": {
+    "message": "Padding"
+  },
+  "SECTION_TITLE_BORDER": {
+    "message": "Border"
+  },
+  "FORM_TITLE_BORDER_WIDTH": {
+    "message": "Width"
+  },
+  "FORM_TITLE_BORDER_STYLE": {
+    "message": "Style"
+  },
+  "FORM_TITLE_BORDER_COLOR": {
+    "message": "Color"
+  },
+  "OPTION_NONE": {
+    "message": "None"
+  },
+  "OPTION_DOTTED": {
+    "message": "Dotted"
+  },
+  "OPTION_DASHED": {
+    "message": "Dashed"
+  },
+  "OPTION_SOLID": {
+    "message": "Solid"
+  },
+  "OPTION_DOUBLE": {
+    "message": "Double"
+  },
+  "OPTION_GROOVE": {
+    "message": "Groove"
+  },
+  "OPTION_RIDGE": {
+    "message": "Ridge"
+  },
+  "OPTION_INSET": {
+    "message": "Inset"
+  },
+  "OPTION_OUTSET": {
+    "message": "Outset"
+  },
+  "SECTION_TITLE_BOX_SHADOW": {
+    "message": "Box Shadow"
+  },
+  "BUTTON_ADD_SHADOW": {
+    "message": "Add Shadow"
+  },
+  "SECTION_TITLE_LAYOUT": {
+    "message": "Layout"
+  },
+  "OPTION_INLINE": {
+    "message": "Inline"
+  },
+  "OPTION_BLOCK": {
+    "message": "Block"
+  },
+  "OPTION_INLINE_BLOCK": {
+    "message": "Inline Block"
+  },
+  "OPTION_FLEX": {
+    "message": "Flex"
+  },
+  "OPTION_INLINE_FLEX": {
+    "message": "Inline Flex"
+  },
+  "OPTION_GRID": {
+    "message": "Grid"
+  },
+  "OPTION_INLINE_GRID": {
+    "message": "Inline Grid"
+  },
+  "FORM_TITLE_DISPLAY": {
+    "message": "Display"
+  },
+  "FORM_TITLE_HORIZONTAL_ALIGN": {
+    "message": "Horizontal Align"
+  },
+  "FORM_TITLE_VERTICAL_ALIGN": {
+    "message": "Vertical Align"
+  },
+  "FORM_TITLE_COLUMN_GAP": {
+    "message": "Column Gap"
+  },
+  "FORM_TITLE_ROW_GAP": {
+    "message": "Row Gap"
+  },
+  "OPTION_ALIGN_START": {
+    "message": "Start"
+  },
+  "OPTION_ALIGN_CENTER": {
+    "message": "Center"
+  },
+  "OPTION_ALIGN_END": {
+    "message": "End"
+  },
+  "OPTION_SPACE_BETWEEN": {
+    "message": "Space Between"
+  },
+  "OPTION_SPACE_AROUND": {
+    "message": "Space Around"
+  },
+  "OPTION_ALIGN_STRETCH": {
+    "message": "Stretch"
+  },
+  "OPTION_ALIGN_NORMAL": {
+    "message": "Normal"
+  },
+  "OPTION_ALIGN_BASELINE": {
+    "message": "Baseline"
+  },
+  "OPTION_ALIGN_ANCHOR_CENTER": {
+    "message": "Anchor Center"
+  },
+  "OPTION_SPACE_EVENLY": {
+    "message": "Space Evenly"
+  },
+  "CONFIRM_DELETE_PRESET": {
+    "message": "Are you sure you want to delete this preset?"
+  },
+  "PROMPT_CHOOSE_PRESET_NAME": {
+    "message": "Choose a name for your preset."
+  },
+  "ALERT_NO_PRESETS": {
+    "message": "No saved presets"
+  },
+  "ALERT_CANNOT_VALIDATE_KEY": {
+    "message": "Could not validate the license key. Check your internet connection and try again."
+  },
+  "ALERT_KEY_VALIDATED": {
+    "message": "Thanks for purchasing UI Inspector!"
+  },
+  "ALERT_INVALID_KEY": {
+    "message": "Invalid Key. Check your key and try again."
+  },
+  "ALERT_UNEXPECTED_ERROR": {
+    "message": "An unexpected error occurred. Please try again."
+  },
+  "ALERT_KEY_REVOKED": {
+    "message": "This license has been revoked due to a refund or chargeback."
+  },
+  "ALERT_KEY_OVERACTIVATED": {
+    "message": "License key has reached the maximum allowed activations."
+  },
+  "ALERT_NO_KEY_PROVIDED": {
+    "message": "Please enter a license key."
+  },
+  "DIALOG_TITLE_UNLOCK": {
+    "message": "Upgrade and Become a UI Inspector PRO"
+  },
+  "FEATURE_1": {
+    "message": "Save Presets and apply styling with the click of a button."
+  },
+  "FEATURE_2": {
+    "message": "Save time by applying changes to similar elements."
+  },
+  "FEATURE_3": {
+    "message": "Export your changes to .png or to GitHub as compiled CSS."
+  },
+  "BUTTON_VALIDATE_KEY": {
+    "message": "Verify"
+  },
+  "BUTTON_SUBSCRIBE": {
+    "message": "Buy License"
+  },
+  "ACTIVATION_KEY_INPUT_PLACEHOLDER": {
+    "message": "License key..."
+  },
+  "PRO_BADGE": {
+    "message": "PRO"
+  },
+  "SECTION_TITLE_EXPORT": {
+    "message": "Export"
+  },
+  "BUTTON_EXPORT_IMAGE": {
+    "message": "Export Element as .png"
+  },
+  "BUTTON_EXPORT_FULL_IMAGE": {
+    "message": "Export Viewport as .png"
+  },
+  "BUTTON_EXPORT_GITHUB": {
+    "message": "Export to GitHub"
+  },
+  "ALERT_NO_SELECTED_ELEMENT": {
+    "message": "Couldn't find the target element."
+  },
+  "ALERT_COULDNT_COMMUNICATE_WITH_TAB": {
+    "message": "Couldn't communicate with tab. Check that UI Inspector is active."
+  },
+  "PROMPT_GITHUB_CONFIG": {
+    "message": "Enter GitHub repository URL (e.g., https://github.com/username/repo)"
+  },
+  "ALERT_NO_CHANGES": {
+    "message": "No changes found for the selected element."
+  },
+  "LABEL_ELEMENT": {
+    "message": "Element"
+  },
+  "LABEL_PAGE": {
+    "message": "Page"
+  },
+  "LABEL_ENTER_LICENSE_KEY": {
+    "message": "Enter your license key below"
+  },
+  "LABEL_LICENSE_KEY_DETAILS": {
+    "message": "License keys are valid for the specified number of activations. Pay once for lifetime access and updates."
+  },
+  "BUTTON_UPGRADE": {
+    "message": "Learn More"
+  },
+  "BUTTON_COPY_CSS_TO_CLIPBOARD": {
+    "message": "Copy CSS"
+  },
+  "LABEL_COPIED": {
+    "message": "Copied!"
+  },
+  "LABEL_COPIED_FAILED": {
+    "message": "Try Again"
+  }
+}

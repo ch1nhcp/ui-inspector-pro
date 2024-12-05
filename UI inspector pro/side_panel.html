@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="side_panel.css" />
+    <script src="side_panel.js"></script>
+</head>
+
+<body>
+    <div id="upgrade" class="upgrade hidden">
+        <div class="upgrade-inner">
+            <button id="close-dialog" class="close-dialog">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                </svg>
+            </button>
+
+            <h1 data-localize="DIALOG_TITLE_UNLOCK"></h1>
+
+            <ul class="feature-list">
+                <li data-localize="FEATURE_1"></li>
+                <li data-localize="FEATURE_2"></li>
+                <li data-localize="FEATURE_3"></li>
+            </ul>
+
+            <p class="annotation" data-localize="LABEL_ENTER_LICENSE_KEY"></p>
+            <div class="fluid-wide control b-input">
+                <input type="text" id="license-key-input" data-placeholder="ACTIVATION_KEY_INPUT_PLACEHOLDER"/>
+            </div>
+            <button id="validate-key" class="button button-secondary" data-localize="BUTTON_VALIDATE_KEY"></button>
+
+            <div class="separator separator-with-label"><span class="separator-or">Or</span></div>
+
+            <button id="subscribe" class="button button-primary upgrade-button" data-localize="BUTTON_SUBSCRIBE"></button>
+
+            <p class="footnote" data-localize="LABEL_LICENSE_KEY_DETAILS"></p>
+        </div>
+    </div>
+
+    <div class="tabs-layout">
+        <div class="tabs">
+            <div class="tabs-inner" id="tabs">
+                <input type="radio" id="tab-1" name="tabs" checked>
+                <label for="tab-1" data-localize="LABEL_ELEMENT"></label>
+
+                <input type="radio" id="tab-2" name="tabs">
+                <label for="tab-2" data-localize="LABEL_PAGE"></label>
+            </div>
+        </div>
+
+        <div class="tabbed-content" data-tab="tab-1">
+            <div id="empty" class="empty">
+                <div class="empty-container">
+                    <div class="empty-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mouse-pointer-2"><path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z"/></svg></div>
+                    <h2 data-localize="EMPTY_MESSAGE"></h2>
+                </div>
+            </div>
+
+            <div id="app" class="app hidden">
+                <div class="section" id="selector">
+                    <div data-id="selector">
+                        <a class="selector selector-parent" data-control="parent-selector"></a>
+                        <a class="selector selector-current" data-control="selector"></a>
+                        <a class="selector selector-child" data-control="child-selector"></a>
+                    </div>
+                </div>
+
+                <div class="section" id="action-controls">
+                    <div class="section-header add-badge">
+                        <div class="section-title" data-localize="SECTION_TITLE_ADVANCED"></div>
+                    </div>
+
+                    <div class="form-section" data-id="update-common">
+                        <label>
+                            <div class="checkbox-background">
+                                <input type="checkbox" class="custom-checkbox" name="update-common" checked data-control="update-common">
+                            </div>
+                            <span data-localize="COMMON_ELEMENTS_TOGGLE_LABEL"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-section" data-id="presets">
+                        <div class="form-row">
+                            <div class="form-section-title" data-localize="FORM_TITLE_PRESET"></div>
+                            <div class="fluid-wide control i-select">
+                                <button data-control="select-preset" class="dropdown-toggle" data-localize="CHOOSE_PRESET"></button>
+                                <div id="preset-list" class="dropdown hidden"></div>
+                            </div>
+                        </div>
+                        <button data-control="save-preset" class="button button-secondary" data-localize="SAVE_PRESET"></button>
+                    </div>
+                </div>
+
+                <div class="section" id="appearance">
+                    <div class="section-header">
+                        <div class="section-title" data-localize="SECTION_TITLE_APPEARANCE"></div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_OPACITY"></div>
+                                    <div class="fluid-wide control i-input i-percentage" data-id="opacity">
+                                        <input type="text" data-control="opacity"/>
+                                    </div>
+                                </div>
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_ROTATION"></div>
+                                    <div class="fluid-wide control i-input i-deg" data-id="rotation">
+                                        <input type="text" data-control="rotation"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title" data-localize="FORM_TITLE_BORDER_RADIUS"></div>
+                        <div data-id="border-radius">
+                            <div class="linked-values-controls">
+                                <div class="linked-controls">
+                                    <div class="form-row">
+                                        <div class="control-split">
+                                            <div class="fluid-wide control i-input i-border-top-left">
+                                                <input type="text" data-control="top-left"/>
+                                            </div>
+                                            <div class="fluid-wide control i-input i-border-top-right">
+                                                <input type="text" data-control="top-right"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="control-split">
+                                            <div class="fluid-wide control i-input i-border-bottom-left">
+                                                <input type="text" data-control="bottom-left"/>
+                                            </div>
+                                            <div class="fluid-wide control i-input i-border-bottom-right">
+                                                <input type="text" data-control="bottom-right"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="link-toggle">
+                                    <input type="checkbox" data-control="link-border-radius" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="form-section-title" data-localize="FORM_TITLE_BLEND_MODE"></div>
+                            <div class="fluid-wide control i-select" data-id="mix-blend-mode">
+                                <select data-control="mix-blend-mode">
+                                    <option value="normal" data-localize="OPTION_BLEND_NORMAL"></option>
+                                    <hr>
+                                    <option value="darken" data-localize="OPTION_BLEND_DARKEN"></option>
+                                    <option value="multiply" data-localize="OPTION_BLEND_MULTIPLY"></option>
+                                    <option value="plus-darker" data-localize="OPTION_BLEND_PLUS_DARKER"></option>
+                                    <option value="color-burn" data-localize="OPTION_BLEND_COLOR_BURN"></option>
+                                    <hr>
+                                    <option value="lighten" data-localize="OPTION_BLEND_LIGHTEN"></option>
+                                    <option value="screen" data-localize="OPTION_BLEND_SCREEN"></option>
+                                    <option value="plus-lighter" data-localize="OPTION_BLEND_PLUS_LIGHTER"></option>
+                                    <option value="color-dodge" data-localize="OPTION_BLEND_COLOR_DODGE"></option>
+                                    <hr>
+                                    <option value="overlay" data-localize="OPTION_BLEND_OVERLAY"></option>
+                                    <option value="soft-light" data-localize="OPTION_BLEND_SOFT_LIGHT"></option>
+                                    <option value="hard-light" data-localize="OPTION_BLEND_HARD_LIGHT"></option>
+                                    <hr>
+                                    <option value="difference" data-localize="OPTION_BLEND_DIFFERENCE"></option>
+                                    <option value="exclusion" data-localize="OPTION_BLEND_EXCLUSION"></option>
+                                    <hr>
+                                    <option value="hue" data-localize="OPTION_BLEND_HUE"></option>
+                                    <option value="saturation" data-localize="OPTION_BLEND_SATURATION"></option>
+                                    <option value="color" data-localize="OPTION_BLEND_COLOR"></option>
+                                    <option value="luminosity" data-localize="OPTION_BLEND_LUMINOSITY"></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="typography">
+                    <div class="section-header">
+                        <div class="section-title" data-localize="SECTION_TITLE_TYPOGRAPHY"></div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title" data-localize="FORM_TITLE_TYPEFACE"></div>
+                        <div class="fluid-wide control i-input" data-id="font-family">
+                            <input type="text" data-control="font-family"/>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_WEIGHT"></div>
+                                    <div class="fluid-wide control i-select" data-id="font-weight">
+                                        <select data-control="font-weight">
+                                            <option value="100" data-localize="OPTION_WEIGHT_THIN"></option>
+                                            <option value="200" data-localize="OPTION_WEIGHT_EXTRA_LIGHT"></option>
+                                            <option value="300" data-localize="OPTION_WEIGHT_LIGHT"></option>
+                                            <option value="400" data-localize="OPTION_WEIGHT_REGULAR"></option>
+                                            <option value="500" data-localize="OPTION_WEIGHT_MEDIUM"></option>
+                                            <option value="600" data-localize="OPTION_WEIGHT_SEMI_BOLD"></option>
+                                            <option value="700" data-localize="OPTION_WEIGHT_BOLD"></option>
+                                            <option value="800" data-localize="OPTION_WEIGHT_EXTRA_BOLD"></option>
+                                            <option value="900" data-localize="OPTION_WEIGHT_BLACK"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_FONT_SIZE"></div>
+                                    <div class="fluid-wide control i-input" data-id="font-size">
+                                        <input type="text" data-control="font-size"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_LINE_HEIGHT"></div>
+                                    <div class="fluid-wide control i-input" data-id="line-height">
+                                        <input type="text" data-control="line-height"/>
+                                    </div>
+                                </div>
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_LETTER_SPACING"></div>
+                                    <div class="fluid-wide control i-input" data-id="letter-spacing">
+                                        <input type="text" data-control="letter-spacing"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_ALIGNMENT"></div>
+                                    <div class="fluid-wide control radio-group" data-id="text-align">
+                                        <label class="icon-box">
+                                            <input type="radio" data-control="text-align-left" name="text-align" value="left">
+                                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-left"><path d="M15 12H3"/><path d="M17 18H3"/><path d="M21 6H3"/></svg></span>
+                                        </label>
+                                        <label class="icon-box">
+                                            <input type="radio" data-control="text-align-center" name="text-align" value="center">
+                                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-center"><path d="M17 12H7"/><path d="M19 18H5"/><path d="M21 6H3"/></svg></span>
+                                        </label>
+                                        <label class="icon-box">
+                                            <input type="radio" data-control="text-align-right" name="text-align" value="right">
+                                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-right"><path d="M21 12H9"/><path d="M21 18H7"/><path d="M21 6H3"/></svg></span>
+                                        </label>
+                                        <label class="icon-box">
+                                            <input type="radio" data-control="text-align-justify" name="text-align" value="justify">
+                                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><path d="M3 12h18"/><path d="M3 18h18"/><path d="M3 6h18"/></svg></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="control-title-pair">
+                                    <div class="form-section-title" data-localize="FORM_TITLE_COLOR"></div>
+                                    <div class="fluid-wide control">
+                                        <div class="control-binding" data-id="color">
+                                            <div class="color-input control i-input">
+                                                <input type="color" data-control="color-input"/>
+                                            </div>
+                                            <div class="fluid-wide control">
+                                                <input type="text" data-control="color-text"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="background">
+                    <div class="section-header">
+                        <div class="section-title" data-localize="SECTION_TITLE_BACKGROUND"></div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title" data-localize="FORM_TITLE_COLOR"></div>
+                        <div class="form-row">
+                            <div class="control-binding" data-id="background-color">
+                                <div class="color-input control">
+                                    <input type="color" data-control="color-input"/>
+                                </div>
+                                <div class="fluid-wide control">
+                                    <input type="text" data-control="color-text"/>
+                                </div>
+                                <div class="fixed-inline control i-percentage">
+                                    <input type="text" data-control="color-opacity"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title" data-localize="FORM_TITLE_BACKGROUND_BLUR"></div>
+                        <div class="form-row" data-id="background-blur">
+                            <div class="fluid-wide control i-input">
+                                <input type="text" data-control="background-blur"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="spacing">
+                    <div class="section-header">
+                        <div class="section-title" data-localize="SECTION_TITLE_SPACING"></div>
+                    </div>
+
+                    <div class="form-section" data-id="margin">
+                        <div class="form-section-title" data-localize="FORM_TITLE_MARGIN"></div>
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="fluid-wide control i-input i-border-top">
+                                    <input type="text" data-control="margin-top"/>
+                                </div>
+                                <div class="fluid-wide control i-input i-border-right">
+                                    <input type="text" data-control="margin-right"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="fluid-wide control i-input i-border-bottom">
+                                    <input type="text" data-control="margin-bottom"/>
+                                </div>
+                                <div class="fluid-wide control i-input i-border-left">
+                                    <input type="text" data-control="margin-left"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section" data-id="padding">
+                        <div class="form-section-title" data-localize="FORM_TITLE_PADDING"></div>
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="fluid-wide control i-input i-border-top">
+                                    <input type="text" data-control="padding-top"/>
+                                </div>
+                                <div class="fluid-wide control i-input i-border-right">
+                                    <input type="text" data-control="padding-right"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="control-split">
+                                <div class="fluid-wide control i-input i-border-bottom">
+                                    <input type="text" data-control="padding-bottom"/>
+                                </div>
+                                <div class="fluid-wide control i-input i-border-left">
+                                    <input type="text" data-control="padding-left"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="border">
+                    <div class="section-header">
+                        <div class="section-title" data-localize="SECTION_TITLE_BORDER"></div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title" data-localize="FORM_TITLE_BORDER_WIDTH"></div>
+                        <div data-id="border-width">
+                            <div class="linked-values-controls">
+                                <div class="linked-controls">
+                                    <div class="form-row">
+                                        <div class="control-split">
+                                            <div class="fluid-wide control i-input i-border-top">
+                                                <input type="text" data-control="top"/>
+                                            </div>
+                                            <div class="fluid-wide control i-input i-border-right">
+                                                <input type="text" data-control="right"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="control-split">
+                                            <div class="fluid-wide control i-input i-border-bottom">
+                                                <input type="text" data-control="bottom"/>
+                                            </div>
+                                            <div class="fluid-wide control i-input i-border-left">
+                                                <input type="text" data-control="left"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="link-toggle">
+                                    <input type="checkbox" data-control="link-border-width" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title" data-localize="FORM_TITLE_BORDER_STYLE"></div>
+                        <div data-id="border-style">
+                            <div class="linked-values-controls">
+                                <div class="linked-controls">
+                                    <div class="form-row">
+                                        <div class="control-split">
+                                            <div class="fluid-wide control i-select i-border-top">
+                                                <select data-control="top">
+                                                    <option value="none" data-localize="OPTION_NONE">None</option>
+                                                    <option value="dotted" data-localize="OPTION_DOTTED">Dotted</option>
+                                                    <option value="dashed" data-localize="OPTION_DASHED">Dashed</option>
+                                                    <option value="solid" data-localize="OPTION_SOLID">Solid</option>
+                                                    <option value="double" data-localize="OPTION_DOUBLE">Double</option>
+                                                    <option value="groove" data-localize="OPTION_GROOVE">Groove</option>
+                                                    <option value="ridge" data-localize="OPTION_RIDGE">Ridge</option>
+                                                    <option value="inset" data-localize="OPTION_INSET">Inset</option>
+                                                    <option value="outset" data-localize="OPTION_OUTSET">Outset</option>
+                                                </select>
+                                            </div>
+                                            <div class="fluid-wide control i-select i-border-right">
+                                                <select data-control="right">
+                                                    <option value="none" data-localize="OPTION_NONE">None</option>
+                                                    <option value="dotted" data-localize="OPTION_DOTTED">Dotted</option>
+                                                    <option value="dashed" data-localize="OPTION_DASHED">Dashed</option>
+                                                    <option value="solid" data-localize="OPTION_SOLID">Solid</option>
+                                                    <option value="double" data-localize="OPTION_DOUBLE">Double</option>
+                                                    <option value="groove" data-localize="OPTION_GROOVE">Groove</option>
+                                                    <option value="ridge" data-localize="OPTION_RIDGE">Ridge</option>
+                                                    <option value="inset" data-localize="OPTION_INSET">Inset</option>
+                                                    <option value="outset" data-localize="OPTION_OUTSET">Outset</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="control-split">
+                                            <div class="fluid-wide control i-select i-border-bottom">
+                                                <select data-control="bottom">
+                                                    <option value="none" data-localize="OPTION_NONE">None</option>
+                                                    <option value="dotted" data-localize="OPTION_DOTTED">Dotted</option>
+                                                    <option value="dashed" data-localize="OPTION_DASHED">Dashed</option>
+                                                    <option value="solid" data-localize="OPTION_SOLID">Solid</option>
+                                                    <option value="double" data-localize="OPTION_DOUBLE">Double</option>
+                                                    <option value="groove" data-localize="OPTION_GROOVE">Groove</option>
+                                                    <option value="ridge" data-localize="OPTION_RIDGE">Ridge</option>
+                                                    <option value="inset" data-localize="OPTION_INSET">Inset</option>
+                                                    <option value="outset" data-localize="OPTION_OUTSET">Outset</option>
+                                                </select>
+                                            </div>
+                                            <div class="fluid-wide control i-select i-border-left">
+                                                <select data-control="left">
+                                                    <option value="none" data-localize="OPTION_NONE">None</option>
+                                                    <option value="dotted" data-localize="OPTION_DOTTED">Dotted</option>
+                                                    <option value="dashed" data-localize="OPTION_DASHED">Dashed</option>
+                                                    <option value="solid" data-localize="OPTION_SOLID">Solid</option>
+                                                    <option value="double" data-localize="OPTION_DOUBLE">Double</option>
+                                                    <option value="groove" data-localize="OPTION_GROOVE">Groove</option>
+                                                    <option value="ridge" data-localize="OPTION_RIDGE">Ridge</option>
+                                                    <option value="inset" data-localize="OPTION_INSET">Inset</option>
+                                                    <option value="outset" data-localize="OPTION_OUTSET">Outset</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="link-toggle">
+                                    <input type="checkbox" data-control="link-border-style" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title" data-localize="FORM_TITLE_BORDER_COLOR"></div>
+                        <div data-id="border-color">
+                            <div class="linked-values-controls">
+                                <div class="linked-controls">
+                                    <div class="form-row">
+                                        <div class="control-binding" data-id="border-top-color">
+                                            <div class="color-input control">
+                                                <input type="color" data-control="color-input"/>
+                                            </div>
+                                            <div class="fluid-wide control">
+                                                <input type="text" data-control="color-text"/>
+                                            </div>
+                                            <div class="fixed-inline control i-percentage">
+                                                <input type="text" data-control="color-opacity"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="control-binding" data-id="border-right-color">
+                                            <div class="color-input control">
+                                                <input type="color" data-control="color-input"/>
+                                            </div>
+                                            <div class="fluid-wide control">
+                                                <input type="text" data-control="color-text"/>
+                                            </div>
+                                            <div class="fixed-inline control i-percentage">
+                                                <input type="text" data-control="color-opacity"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="control-binding" data-id="border-bottom-color">
+                                            <div class="color-input control">
+                                                <input type="color" data-control="color-input"/>
+                                            </div>
+                                            <div class="fluid-wide control">
+                                                <input type="text" data-control="color-text"/>
+                                            </div>
+                                            <div class="fixed-inline control i-percentage">
+                                                <input type="text" data-control="color-opacity"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="control-binding" data-id="border-left-color">
+                                            <div class="color-input control">
+                                                <input type="color" data-control="color-input"/>
+                                            </div>
+                                            <div class="fluid-wide control">
+                                                <input type="text" data-control="color-text"/>
+                                            </div>
+                                            <div class="fixed-inline control i-percentage">
+                                                <input type="text" data-control="color-opacity"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="link-toggle">
+                                    <input type="checkbox" data-control="link-border-color" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="box-shadow">
+                    <div class="section-header">
+                        <div class="section-title" data-localize="SECTION_TITLE_BOX_SHADOW"></div>
+                    </div>
+                    <div data-id="box-shadow">
+                        <div data-id="box-shadow-items"></div>
+                        <button data-control="add-shadow" class="button button-secondary" data-localize="BUTTON_ADD_SHADOW"></button>
+                    </div>
+                </div>
+
+                <div class="section" id="layout" data-id="layout">
+                <div class="section-header">
+                    <div class="section-title" data-localize="SECTION_TITLE_LAYOUT"></div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="control-title-pair">
+                            <div class="form-section-title" data-localize="FORM_TITLE_DISPLAY"></div>
+                            <div class="fluid-wide control i-select">
+                            <select data-control="display">
+                                <option value="none" data-localize="OPTION_NONE"></option>
+                                <option value="inline" data-localize="OPTION_INLINE"></option>
+                                <option value="block" data-localize="OPTION_BLOCK"></option>
+                                <option value="inline-block" data-localize="OPTION_INLINE_BLOCK"></option>
+                                <option value="flex" data-localize="OPTION_FLEX"></option>
+                                <option value="inline-flex" data-localize="OPTION_INLINE_FLEX"></option>
+                                <option value="grid" data-localize="OPTION_GRID"></option>
+                                <option value="inline-grid" data-localize="OPTION_INLINE_GRID"></option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-row">
+                    <div class="control-split">
+                        <div class="control-title-pair">
+                        <div class="form-section-title" data-localize="FORM_TITLE_HORIZONTAL_ALIGN"></div>
+                        <div class="fluid-wide control i-select">
+                            <select data-control="horizontal-align">
+                            <option value="normal" data-localize="OPTION_ALIGN_NORMAL"></option>
+                            <option value="start" data-localize="OPTION_ALIGN_START"></option>
+                            <option value="center" data-localize="OPTION_ALIGN_CENTER"></option>
+                            <option value="end" data-localize="OPTION_ALIGN_END"></option>
+                            <option value="space-between" data-localize="OPTION_SPACE_BETWEEN"></option>
+                            <option value="space-around" data-localize="OPTION_SPACE_AROUND"></option>
+                            <option value="space-evenly" data-localize="OPTION_SPACE_EVENLY"></option>
+                            </select>
+                        </div>
+                        </div>
+
+                        <div class="control-title-pair">
+                        <div class="form-section-title" data-localize="FORM_TITLE_VERTICAL_ALIGN"></div>
+                        <div class="fluid-wide control i-select">
+                            <select data-control="vertical-align">
+                            <option value="normal" data-localize="OPTION_ALIGN_NORMAL"></option>
+                            <option value="start" data-localize="OPTION_ALIGN_START"></option>
+                            <option value="center" data-localize="OPTION_ALIGN_CENTER"></option>
+                            <option value="end" data-localize="OPTION_ALIGN_END"></option>
+                            <option value="stretch" data-localize="OPTION_ALIGN_STRETCH"></option>
+                            <option value="baseline" data-localize="OPTION_ALIGN_BASELINE"></option>
+                            <option value="anchor-center" data-localize="OPTION_ALIGN_ANCHOR_CENTER"></option>
+                            </select>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="control-split">
+                            <div class="control-title-pair">
+                                <div class="form-section-title" data-localize="FORM_TITLE_ROW_GAP"></div>
+                                <div class="fluid-wide control i-input">
+                                    <input type="text" data-control="row-gap"/>
+                                </div>
+                            </div>
+                            <div class="control-title-pair">
+                                <div class="form-section-title" data-localize="FORM_TITLE_COLUMN_GAP"></div>
+                                <div class="fluid-wide control i-input">
+                                    <input type="text" data-control="column-gap"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="section" id="export">
+                    <div class="section-header add-badge">
+                        <div class="section-title" data-localize="SECTION_TITLE_EXPORT"></div>
+                    </div>
+                    <div data-id="export">
+                        <div class="form-row">
+                            <button data-control="export-image" class="button button-secondary" data-localize="BUTTON_EXPORT_IMAGE"></button>
+                        </div>
+                        <div class="form-row">
+                            <button data-control="export-full-image" class="button button-secondary" data-localize="BUTTON_EXPORT_FULL_IMAGE"></button>
+                        </div>
+
+                        <div class="separator"></div>
+
+                        <div class="form-row">
+                            <button data-control="copy-css" class="button button-secondary" data-localize="BUTTON_COPY_CSS_TO_CLIPBOARD"></button>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="control-split">
+                                <button data-control="export-github" class="button button-secondary">
+                                    <span class="button-inner">
+                                        <span class="button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
+                                        <span data-localize="BUTTON_EXPORT_GITHUB" class="button-label"></span>
+                                    </span>
+                                </button>
+                                <button data-control="config-github" class="icon-button button-secondary">
+                                    <span class="button-inner">
+                                        <span class="button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-branch"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabbed-content hidden" data-tab="tab-2">
+            <div id="no-results" class="empty hidden">
+                <div class="empty-container">
+                    <div class="empty-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></div>
+                    <h2 data-localize="NO_CHANGES_MESSAGE"></h2>
+                </div>
+            </div>
+
+            <div class="loader-container hidden" id="loader-tab-2">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="element-list-container" class="hidden">
+                <div class="section-floating" id="export">
+                    <div class="section-header add-badge">
+                        <div class="section-title" data-localize="SECTION_TITLE_EXPORT"></div>
+                    </div>
+
+                    <div data-id="export-all">
+                        <div class="form-row">
+                            <button data-control="copy-css" class="button button-secondary" data-localize="BUTTON_COPY_CSS_TO_CLIPBOARD"></button>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="control-split">
+                                <button data-control="export-github-all" class="button button-secondary">
+                                    <span class="button-inner">
+                                        <span class="button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
+                                        <span data-localize="BUTTON_EXPORT_GITHUB" class="button-label"></span>
+                                    </span>
+                                </button>
+                                <button data-control="config-github" class="icon-button button-secondary">
+                                    <span class="button-inner">
+                                        <span class="button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-branch"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="element-list" class="element-list-container"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
